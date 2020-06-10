@@ -1,0 +1,218 @@
+body {
+  font-size: 16px;
+  font-family: 'Libre Baskerville', serif;
+}
+span {
+  font-size: 3rem;
+}
+p {
+  line-height: 1.5;
+}
+
+/* ヘッダー */
+.header {
+  height: 800px;
+  width: 100%;
+  position: relative;
+}
+  header {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: block;
+    position: relative;
+  }
+    .title {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      vertical-align: middle;
+      position: absolute;
+      color: #fff;
+      top: 30%;
+    }
+      .title h1{
+        font-size: 10rem;
+        text-align: center;
+        line-height: 1.8;
+      }
+      .title a {
+        text-decoration: none;
+        color: #3fe;
+      }
+      .title a:hover {
+        opacity: 0.8;
+      }
+      .title h2 {
+        font-size: 3rem;
+      }
+    .nav {
+      position: relative;
+    }
+
+    .header_video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-attachment: fixed;
+      background-position: bottom bottom;
+      z-index: -1;
+      overflow: hidden;
+    }
+      .header_video video {
+        object-fit: cover;
+        width: 100%;
+        height: 800px;
+        /* height: 100%; */
+        object-position: top top;
+      }
+/* レスポンシブ */
+@media screen and (max-width: 767px){
+  .title {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    vertical-align: middle;
+    position: absolute;
+    top: 30%;
+  }
+
+  .title h1{
+    font-size: 7rem;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .title h2 {
+    font-size: 2.5rem;
+  }
+  .nav {
+    position: relative;
+  }
+
+}
+
+/* main */
+.main {
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+  opacity: 1;
+  padding-top: 50px;
+}
+
+.main h2 {
+  text-align: center;
+  font-size: 5rem;
+  line-height: 1.8;
+}
+
+/* 自己紹介 */
+.about {
+  position: relative;
+  opacity: 1;
+}
+.about_img {
+  position: relative;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 15px;
+  opacity: 1;
+}
+.about_img img {
+  object-fit: cover;
+  object-position: center top;
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  border-radius: 15rem;
+}
+.about_content p {
+  line-height: 1.8;
+}
+/* レスポンシブ */
+@media screen and (max-width: 767px){
+  .about_img {
+    max-width: 767px;
+    width: 90%;
+    text-align: center;
+  }
+  .about_img img {
+    object-fit: cover;
+    object-position: center top;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* 経歴 */
+.history {
+  text-align: center;
+}
+  .history table {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+    thead {
+      display: none;
+    }
+    tr {
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+      th {
+        font-size: 2rem;
+        line-height: 1.5;
+        padding-right: 50px;
+        text-align: center;
+        padding-bottom: 30px;
+        padding-top: 20px;
+      }
+      td {
+        text-align: left;
+        font-size: 14px;
+        line-height: 1.5;
+        padding-right: 50px;
+        padding-bottom: 15px;
+      }
+      .day {
+        width: 20%;
+        text-align: right;
+      }
+      .table_content {
+        width: 80%;
+        text-align: left;
+      }
+/* レスポンシブ */
+@media screen and (max-width: 767px){
+  .hisory table {
+    width: 100%;
+  }
+    thead {
+      display: table-header-group;
+      width: 100%;
+    }
+    th, td,.day, .table_content {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+    }
+    .day, th {
+      text-align: center;
+    }
+    th, td {
+      padding: 0;
+    }
+
+}
+
+
+.skill {
+  position: relative;
+}
