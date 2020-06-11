@@ -1,18 +1,27 @@
 body {
   font-size: 16px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Noto Serif', serif;
+  box-sizing: border-box;
 }
 span {
   font-size: 3rem;
 }
 p {
   line-height: 1.5;
+  box-sizing: border-box;
+}
+h1, h2 , h3{
+  font-family: 'Libre Baskerville', serif;
+  box-sizing: border-box;
+}
+div {
+  box-sizing: border-box;
 }
 
 /* ヘッダー */
 .header {
-  height: 800px;
   width: 100%;
+  height: 800px;
   position: relative;
 }
   header {
@@ -65,8 +74,8 @@ p {
       .header_video video {
         object-fit: cover;
         width: 100%;
-        height: 800px;
-        /* height: 100%; */
+        height: 80rem;
+        height: 100%;
         object-position: top top;
       }
 /* レスポンシブ */
@@ -114,6 +123,7 @@ p {
 .about {
   position: relative;
   opacity: 1;
+  margin-bottom: 50px;
 }
 .about_img {
   position: relative;
@@ -136,15 +146,14 @@ p {
 /* レスポンシブ */
 @media screen and (max-width: 767px){
   .about_img {
-    max-width: 767px;
     width: 90%;
     text-align: center;
   }
   .about_img img {
     object-fit: cover;
-    object-position: center top;
-    width: 150px;
-    height: 150px;
+    object-position: center center;
+    width: 15rem;
+    height: 15rem;
   }
 }
 
@@ -212,7 +221,42 @@ p {
 
 }
 
-
-.skill {
+/* 開発スキル */
+.skills {
   position: relative;
+  box-sizing: border-box;
 }
+  .skills h3 {
+    font-size: 3rem;
+    padding-bottom: 15px;
+  }
+  .skill_list_item {
+    padding-top: 5px;
+    line-height: 1.5;
+    text-align: center;
+    list-style: circle;
+    display: flex;
+  }
+    .skill_name {
+      display: block;
+      position: relative;
+    }
+    .skill_rate {
+      display: inline-block;
+      position: absolute;
+      right: 30%;
+      width: 110px;
+      height: 20px;
+      line-height: 20px;
+    }
+    .skill_rate::before {
+      color: #ddd;
+      content: '****';
+    }
+    .skill_rate::after {
+      color: #808080;
+      overflow: hidden;
+      white-space: nowrap;
+      content: '*****';
+      width: 100%;
+    }
