@@ -13,6 +13,7 @@ p {
 h1, h2 , h3{
   font-family: 'Libre Baskerville', serif;
   box-sizing: border-box;
+  z-index: 5;
 }
 div {
   box-sizing: border-box;
@@ -74,8 +75,8 @@ div {
       .header_video video {
         object-fit: cover;
         width: 100%;
-        height: 80rem;
-        height: 100%;
+        height: 800px;
+        /* height: 100%; */
         object-position: top top;
       }
 /* レスポンシブ */
@@ -107,12 +108,23 @@ div {
 /* main */
 .main {
   position: relative;
+  background-color:rgba(255, 255, 255, 0.6);
+  background-size: cover;
   z-index: 5;
-  background-color: #fff;
-  opacity: 1;
-  padding-top: 50px;
 }
-
+.main::before {
+  position: absolute;
+}
+.section {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.history, .skills, .outputs, .contact {
+  position: relative;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  /* z-index: 5; */
+}
 .main h2 {
   text-align: center;
   font-size: 5rem;
@@ -122,8 +134,8 @@ div {
 /* 自己紹介 */
 .about {
   position: relative;
+  /* background-color: #fff; */
   opacity: 1;
-  margin-bottom: 50px;
 }
 .about_img {
   position: relative;
@@ -135,8 +147,8 @@ div {
 .about_img img {
   object-fit: cover;
   object-position: center top;
-  width: 300px;
-  height: 300px;
+  width: 30rem;
+  height: 30rem;
   box-sizing: border-box;
   border-radius: 15rem;
 }
@@ -144,7 +156,13 @@ div {
   line-height: 1.8;
 }
 /* レスポンシブ */
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
+  .about_content p {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 767px){
   .about_img {
     width: 90%;
     text-align: center;
@@ -155,27 +173,34 @@ div {
     width: 15rem;
     height: 15rem;
   }
+  .about_content p {
+    margin-left: 0;
+  }
 }
+
 
 /* 経歴 */
 .history {
   text-align: center;
+  /* color: #3fe; */
+  z-index: 99;
+  opacity: 1;
 }
   .history table {
     width: 70%;
     margin: 0 auto;
     text-align: center;
   }
-    thead {
+    .history thead {
       display: none;
     }
-    tr {
+    .history tr {
       position: relative;
       width: 100%;
       box-sizing: border-box;
       margin-bottom: 20px;
     }
-      th {
+      .hitstory th {
         font-size: 2rem;
         line-height: 1.5;
         padding-right: 50px;
@@ -183,7 +208,7 @@ div {
         padding-bottom: 30px;
         padding-top: 20px;
       }
-      td {
+      .history td {
         text-align: left;
         font-size: 14px;
         line-height: 1.5;
@@ -203,16 +228,16 @@ div {
   .hisory table {
     width: 100%;
   }
-    thead {
+    .history thead {
       display: table-header-group;
       width: 100%;
     }
-    th, td,.day, .table_content {
+    .history th, .history td,.day, .table_content {
       display: block;
       width: 90%;
       margin: 10px auto;
     }
-    .day, th {
+    .day, .history th {
       text-align: center;
     }
     th, td {
@@ -226,37 +251,57 @@ div {
   position: relative;
   box-sizing: border-box;
 }
+  .skills table {
+    width: 100%;
+    margin: 15px auto;
+  }
   .skills h3 {
     font-size: 3rem;
     padding-bottom: 15px;
   }
-  .skill_list_item {
-    padding-top: 5px;
-    line-height: 1.5;
-    text-align: center;
-    list-style: circle;
-    display: flex;
+  .skills th, .skills td {
+    vertical-align: top;
   }
-    .skill_name {
-      display: block;
-      position: relative;
-    }
-    .skill_rate {
-      display: inline-block;
+  .skill_level {
+    position: relative;
+    width: 5em;
+    height: 1em;
+    font-size: 20px;
+  }
+  .skill_level table {
+    width: 100%;
+    box-sizing: border-box;
+  }
+    .star_rating_front {
       position: absolute;
-      right: 30%;
-      width: 110px;
-      height: 20px;
-      line-height: 20px;
-    }
-    .skill_rate::before {
-      color: #ddd;
-      content: '****';
-    }
-    .skill_rate::after {
-      color: #808080;
+      top: 0;
+      left: 0;
       overflow: hidden;
-      white-space: nowrap;
-      content: '*****';
-      width: 100%;
+      color: #808080;
     }
+    .star_rating_back {
+      color: #ccc;
+    }
+    .rate2 {
+      width: 40%;
+    }
+    .rate3 {
+      width: 60%;
+    }
+    .rate4 {
+      width: 85%;
+    }
+    .rate5 {
+      width: 90%;
+    }
+@media screen and (max-width: 767px) {
+  .skills h3 {
+    text-align: center;
+  }
+  .skill_name {
+    text-align: left;
+  }
+  .skill_level {
+    text-align: left;
+  }
+}
