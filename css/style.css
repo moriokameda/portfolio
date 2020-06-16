@@ -345,6 +345,10 @@ div {
       color: #000;
       font-size: 20px;
     }
+    .card .link_img:hover {
+      text-decoration: none;
+      opacity: 0.3;
+    }
     .card img {
       position: relative;
       display: block;
@@ -362,7 +366,7 @@ div {
       line-height: 1.8;
     }
     .github_link {
-      color: aqua;
+      color: #09f;
     }
 
 @media screen and (max-width: 767px) {
