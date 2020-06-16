@@ -337,6 +337,9 @@ div {
       text-align: center;
       padding: 0;
       padding-bottom: 1rem;
+      margin-right: 3rem;
+      margin-bottom: 1rem;
+      background-color: #eee;
     }
     .card .link_img {
       color: #000;
@@ -376,6 +379,7 @@ div {
       height: auto;
       text-align: center;
       overflow: hidden;
+      margin: 0;
     }
     .card img {
       object-position: bottom bottom;
